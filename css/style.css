@@ -1,0 +1,183 @@
+body {
+  width: 100vw;
+  height: 2000vh;
+  background-color: ivory;
+}
+div {
+  position: absolute;
+}
+.game_canvas {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url('../img/carpet.png');
+}
+.game2 {
+  margin-left: 100%;
+}
+.game3 {
+  margin-left: 200%;
+}
+.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#game_container {
+  position: fixed;
+  width: 196.61016949vh;
+  height: 100vh;
+}
+.game_table_wrapper {
+  width: 100%;
+  height: 100%;
+  max-width: 589.83050847px;
+  max-height: 300px;
+  background-color: rgba(0, 0, 0, 0.65);
+  overflow: hidden;
+}
+.games_wrapper {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  transition: left 500ms;
+}
+.game_wrapper {
+  width: 80%;
+  height: 80%;
+  margin-top: 3%;
+}
+.play-pause-btn {
+  position: absolute;
+  top: -5%;
+  right: -10%;
+  z-index: 10;
+  width: 20%;
+  max-width: 200px;
+}
+.tables {
+  width: 100%;
+  height: 10%;
+  border-bottom: 1px solid rgba(150, 150, 150, 0.97);
+  z-index: 1;
+}
+.table {
+  position: initial;
+  float: left;
+  height: 100%;
+  width: 10%;
+  background-image: url('../img/carpet.png');
+  background-size: cover;
+  margin-left: 1%;
+}
+.player {
+  display: inline-block;
+  height: 16%;
+  width: 24%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 3;
+  border: 1px solid #fde2ff;
+  border-radius: 2px;
+}
+.playerImage {
+  height: 100%;
+  width: 33.90804598%;
+  background-size: cover;
+  background-image: url('../img/placeholder.jpg');
+}
+.playerName,
+.playerMoney {
+  right: 0;
+  left: 33.90804598%;
+  top: 0;
+  color: white;
+  text-align: center;
+  font-size: 0.8em;
+  height: 50%;
+}
+@media only screen and (max-width: 768px) {
+  .playerName,
+  .playerMoney {
+    font-size: 0.7em;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .playerName,
+  .playerMoney {
+    font-size: 0.5em;
+  }
+}
+.playerMoney {
+  bottom: 0;
+  top: auto;
+  color: #009a00;
+}
+.player1 {
+  top: 1%;
+  left: 12%;
+}
+.player2 {
+  top: 28%;
+  left: -10%;
+}
+.player3 {
+  top: 55%;
+  left: -10%;
+}
+.player4 {
+  top: 82%;
+  left: -1%;
+}
+.player5 {
+  top: 84%;
+  left: 37%;
+}
+.player6 {
+  top: 82%;
+  left: 76%;
+}
+.player7 {
+  top: 55%;
+  left: 85%;
+}
+.player8 {
+  top: 28%;
+  left: 85%;
+}
+.player9 {
+  top: 1%;
+  left: 63%;
+}
+.player1 .playerImage {
+  background-image: url('../img/players/player1.png');
+}
+.player2 .playerImage {
+  background-image: url('../img/players/player2.png');
+}
+.player3 .playerImage {
+  background-image: url('../img/players/player3.png');
+}
+.player4 .playerImage {
+  background-image: url('../img/players/player4.png');
+}
+.player5 .playerImage {
+  background-image: url('../img/players/player5.png');
+}
+.player6 .playerImage {
+  background-image: url('../img/players/player6.png');
+}
+.player7 .playerImage {
+  background-image: url('../img/players/player7.png');
+}
+.player8 .playerImage {
+  background-image: url('../img/players/player8.png');
+}
+.player9 .playerImage {
+  background-image: url('../img/players/player9.png');
+}
+@media (max-aspect-ratio: 116 / 59) {
+  #game_container {
+    width: 98.30508475vw;
+    height: 50vw;
+  }
+}

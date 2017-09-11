@@ -1,0 +1,109 @@
+@import 'consts';
+
+.card {
+  background-image: url('../img/card-back2.png');
+  background-size: cover;
+  background-position-x: center;
+  width: @card_width;
+  height: @card_height;
+
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+
+.game_in_progress {
+
+  .animate(@card, @top, @left) {
+    @name: ~'card@{card}';
+    @keyframes @name {
+      from {
+        opacity: 0.1;
+      }
+
+      50% {
+        opacity: 0.8;
+      }
+
+      to {
+        top: @top;
+        left: @left;
+        opacity: 1;
+      }
+    }
+
+    @new: ~'.@{name}';
+    @{new} {
+      animation: @name 300ms linear 100ms * (@card - 1) forwards;
+    }
+  }
+
+  .animate2Card(@card, @top, @left) {
+    .animate(@card * 2 - 1, @top, @left);
+    .animate(@card * 2, @top + 1, @left + 1);
+  }
+
+  .animate2Card(1, 2%, 28%);
+  .animate2Card(2, 29%, 6%);
+  .animate2Card(3, 56%, 6%);
+  .animate2Card(4, 83%, 15%);
+  .animate2Card(5, 85%, 53%);
+  .animate2Card(6, 83%, 92%);
+  .animate2Card(7, 56%, 101%);
+  .animate2Card(8, 29%, 101%);
+  .animate2Card(9, 2%, 79%);
+
+  .animateOpenCard(@card, @top: 45%, @left) {
+    @name: ~'card@{card}';
+    @keyframes @name {
+      from {
+        opacity: 0.1;
+      }
+
+      50% {
+        opacity: 0.8;
+      }
+
+      to {
+        width: 8.2%;
+        height: @card_height_open;
+        top: 45%;
+        left: 33.2%;
+      }
+    }
+
+    @new: ~'.@{name}';
+    @{new} {
+      animation: @name 300ms linear 100ms * (@card - 1) forwards;
+    }
+
+    @name2: ~'card@{card}_open';
+    @keyframes @name2 {
+      from {
+        width: 8.2%;
+        height: @card_height_open;
+        top: 45%;
+        left: 33.2%;
+      }
+
+      to {
+        width: 8.2%;
+        height: @card_height_open;
+        top: 45%;
+        left: 33.2% + (@card - 19) * (8.2 + 1%);
+      }
+    }
+
+    @{new}.open {
+      animation: @name2 150ms linear 0ms * (23 - @card) forwards;
+    }
+  }
+
+  .animateOpenCard(19, 45%, 33.2%);
+  .animateOpenCard(20, 45%, 33.2%);
+  .animateOpenCard(21, 45%, 33.2%);
+  .animateOpenCard(22, 45%, 33.2%);
+  .animateOpenCard(23, 45%, 33.2%);
+
+}

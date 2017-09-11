@@ -1,0 +1,469 @@
+.card {
+  background-image: url('../img/card-back2.png');
+  background-size: cover;
+  background-position-x: center;
+  width: 5%;
+  height: 13.67722918%;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+}
+@keyframes card1 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    top: 2%;
+    left: 28%;
+    opacity: 1;
+  }
+}
+.game_in_progress .card1 {
+  animation: card1 300ms linear 0ms forwards;
+}
+@keyframes card2 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    top: 3%;
+    left: 29%;
+    opacity: 1;
+  }
+}
+.game_in_progress .card2 {
+  animation: card2 300ms linear 100ms forwards;
+}
+@keyframes card3 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    top: 29%;
+    left: 6%;
+    opacity: 1;
+  }
+}
+.game_in_progress .card3 {
+  animation: card3 300ms linear 200ms forwards;
+}
+@keyframes card4 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    top: 30%;
+    left: 7%;
+    opacity: 1;
+  }
+}
+.game_in_progress .card4 {
+  animation: card4 300ms linear 300ms forwards;
+}
+@keyframes card5 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    top: 56%;
+    left: 6%;
+    opacity: 1;
+  }
+}
+.game_in_progress .card5 {
+  animation: card5 300ms linear 400ms forwards;
+}
+@keyframes card6 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    top: 57%;
+    left: 7%;
+    opacity: 1;
+  }
+}
+.game_in_progress .card6 {
+  animation: card6 300ms linear 500ms forwards;
+}
+@keyframes card7 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    top: 83%;
+    left: 15%;
+    opacity: 1;
+  }
+}
+.game_in_progress .card7 {
+  animation: card7 300ms linear 600ms forwards;
+}
+@keyframes card8 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    top: 84%;
+    left: 16%;
+    opacity: 1;
+  }
+}
+.game_in_progress .card8 {
+  animation: card8 300ms linear 700ms forwards;
+}
+@keyframes card9 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    top: 85%;
+    left: 53%;
+    opacity: 1;
+  }
+}
+.game_in_progress .card9 {
+  animation: card9 300ms linear 800ms forwards;
+}
+@keyframes card10 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    top: 86%;
+    left: 54%;
+    opacity: 1;
+  }
+}
+.game_in_progress .card10 {
+  animation: card10 300ms linear 900ms forwards;
+}
+@keyframes card11 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    top: 83%;
+    left: 92%;
+    opacity: 1;
+  }
+}
+.game_in_progress .card11 {
+  animation: card11 300ms linear 1000ms forwards;
+}
+@keyframes card12 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    top: 84%;
+    left: 93%;
+    opacity: 1;
+  }
+}
+.game_in_progress .card12 {
+  animation: card12 300ms linear 1100ms forwards;
+}
+@keyframes card13 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    top: 56%;
+    left: 101%;
+    opacity: 1;
+  }
+}
+.game_in_progress .card13 {
+  animation: card13 300ms linear 1200ms forwards;
+}
+@keyframes card14 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    top: 57%;
+    left: 102%;
+    opacity: 1;
+  }
+}
+.game_in_progress .card14 {
+  animation: card14 300ms linear 1300ms forwards;
+}
+@keyframes card15 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    top: 29%;
+    left: 101%;
+    opacity: 1;
+  }
+}
+.game_in_progress .card15 {
+  animation: card15 300ms linear 1400ms forwards;
+}
+@keyframes card16 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    top: 30%;
+    left: 102%;
+    opacity: 1;
+  }
+}
+.game_in_progress .card16 {
+  animation: card16 300ms linear 1500ms forwards;
+}
+@keyframes card17 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    top: 2%;
+    left: 79%;
+    opacity: 1;
+  }
+}
+.game_in_progress .card17 {
+  animation: card17 300ms linear 1600ms forwards;
+}
+@keyframes card18 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    top: 3%;
+    left: 80%;
+    opacity: 1;
+  }
+}
+.game_in_progress .card18 {
+  animation: card18 300ms linear 1700ms forwards;
+}
+@keyframes card19 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    width: 8.2%;
+    height: 22.43065586%;
+    top: 45%;
+    left: 33.2%;
+  }
+}
+.game_in_progress .card19 {
+  animation: card19 300ms linear 1800ms forwards;
+}
+@keyframes card19_open {
+  from {
+    width: 8.2%;
+    height: 22.43065586%;
+    top: 45%;
+    left: 33.2%;
+  }
+  to {
+    width: 8.2%;
+    height: 22.43065586%;
+    top: 45%;
+    left: 33.2%;
+  }
+}
+.game_in_progress .card19.open {
+  animation: card19_open 150ms linear 0ms forwards;
+}
+@keyframes card20 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    width: 8.2%;
+    height: 22.43065586%;
+    top: 45%;
+    left: 33.2%;
+  }
+}
+.game_in_progress .card20 {
+  animation: card20 300ms linear 1900ms forwards;
+}
+@keyframes card20_open {
+  from {
+    width: 8.2%;
+    height: 22.43065586%;
+    top: 45%;
+    left: 33.2%;
+  }
+  to {
+    width: 8.2%;
+    height: 22.43065586%;
+    top: 45%;
+    left: 42.4%;
+  }
+}
+.game_in_progress .card20.open {
+  animation: card20_open 150ms linear 0ms forwards;
+}
+@keyframes card21 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    width: 8.2%;
+    height: 22.43065586%;
+    top: 45%;
+    left: 33.2%;
+  }
+}
+.game_in_progress .card21 {
+  animation: card21 300ms linear 2000ms forwards;
+}
+@keyframes card21_open {
+  from {
+    width: 8.2%;
+    height: 22.43065586%;
+    top: 45%;
+    left: 33.2%;
+  }
+  to {
+    width: 8.2%;
+    height: 22.43065586%;
+    top: 45%;
+    left: 51.6%;
+  }
+}
+.game_in_progress .card21.open {
+  animation: card21_open 150ms linear 0ms forwards;
+}
+@keyframes card22 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    width: 8.2%;
+    height: 22.43065586%;
+    top: 45%;
+    left: 33.2%;
+  }
+}
+.game_in_progress .card22 {
+  animation: card22 300ms linear 2100ms forwards;
+}
+@keyframes card22_open {
+  from {
+    width: 8.2%;
+    height: 22.43065586%;
+    top: 45%;
+    left: 33.2%;
+  }
+  to {
+    width: 8.2%;
+    height: 22.43065586%;
+    top: 45%;
+    left: 60.8%;
+  }
+}
+.game_in_progress .card22.open {
+  animation: card22_open 150ms linear 0ms forwards;
+}
+@keyframes card23 {
+  from {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  to {
+    width: 8.2%;
+    height: 22.43065586%;
+    top: 45%;
+    left: 33.2%;
+  }
+}
+.game_in_progress .card23 {
+  animation: card23 300ms linear 2200ms forwards;
+}
+@keyframes card23_open {
+  from {
+    width: 8.2%;
+    height: 22.43065586%;
+    top: 45%;
+    left: 33.2%;
+  }
+  to {
+    width: 8.2%;
+    height: 22.43065586%;
+    top: 45%;
+    left: 70%;
+  }
+}
+.game_in_progress .card23.open {
+  animation: card23_open 150ms linear 0ms forwards;
+}
