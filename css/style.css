@@ -6,18 +6,6 @@ body {
 div {
   position: absolute;
 }
-.game_canvas {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-image: url('../img/carpet.png');
-}
-.game2 {
-  margin-left: 100%;
-}
-.game3 {
-  margin-left: 200%;
-}
 .center {
   top: 50%;
   left: 50%;
@@ -27,6 +15,27 @@ div {
   position: fixed;
   width: 196.61016949vh;
   height: 100vh;
+}
+@media (max-aspect-ratio: 116 / 59) {
+  #game_container {
+    width: 98.30508475vw;
+    height: 50vw;
+  }
+}
+.game_canvas {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url('../img/carpet.png');
+}
+.game1 {
+  margin-left: 0;
+}
+.game2 {
+  margin-left: 100%;
+}
+.game3 {
+  margin-left: 200%;
 }
 .game_table_wrapper {
   width: 100%;
@@ -174,10 +183,4 @@ div {
 }
 .player9 .playerImage {
   background-image: url('../img/players/player9.png');
-}
-@media (max-aspect-ratio: 116 / 59) {
-  #game_container {
-    width: 98.30508475vw;
-    height: 50vw;
-  }
 }

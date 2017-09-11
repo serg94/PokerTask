@@ -10,21 +10,6 @@ div {
   position: absolute;
 }
 
-.game_canvas {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-image: url('../img/carpet.png');
-}
-
-.game2 {
-  margin-left: 100%;
-}
-
-.game3 {
-  margin-left: 200%;
-}
-
 .center {
   top: 50%;
   left: 50%;
@@ -35,7 +20,32 @@ div {
   position: fixed;
   width: 100vh * @game_aspect_ratio;
   height: 100vh;
-  //background-color: yellow;
+}
+
+@media (max-aspect-ratio: ~"@{game_aspect_ratio_str}") {
+  #game_container {
+    width: 50vw * @game_aspect_ratio;
+    height: 50vw;
+  }
+}
+
+.game_canvas {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-image: url('../img/carpet.png');
+}
+
+.game1 {
+  margin-left: 0;
+}
+
+.game2 {
+  margin-left: 100%;
+}
+
+.game3 {
+  margin-left: 200%;
 }
 
 .game_table_wrapper {
@@ -102,7 +112,6 @@ div {
   background-size: cover;
   background-image: url('../img/placeholder.jpg');
 }
-
 
 .playerName, .playerMoney {
   right: 0;
@@ -187,10 +196,3 @@ div {
 }
 
 .loop(9);
-
-@media (max-aspect-ratio: ~"@{game_aspect_ratio_str}") {
-  #game_container {
-    width: 50vw * @game_aspect_ratio;
-    height: 50vw;
-  }
-}

@@ -2,7 +2,7 @@
 
 let handlers = new WeakMap();
 
-function newGameFactory(wrapper_class_name) {
+function gameFactory(wrapper_class_name) {
     let wrapper = document.querySelector(`.${wrapper_class_name}`);
     let game = new Poker(wrapper);
 
@@ -19,7 +19,7 @@ function newGameFactory(wrapper_class_name) {
     return game;
 }
 
-let games = [ newGameFactory('game1'), newGameFactory('game2'), newGameFactory('game3') ];
+let games = [ gameFactory('game1'), gameFactory('game2'), gameFactory('game3') ];
 
 let tables = document.querySelectorAll('.tables .table');
 let games_wrapper = document.querySelector('.games_wrapper');
