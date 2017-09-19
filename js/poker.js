@@ -1,5 +1,7 @@
 "use strict";
 
+let devicePixelRatio = window.devicePixelRatio;
+
 class Poker {
     constructor(wrapper) {
         this._paused = true;
@@ -25,7 +27,7 @@ class Poker {
     _renderCards() {
         for (let i = 1; i <= 18 + 5; i++) {
             let player = `
-                <div class="card card${i}"></div>
+                <canvas class="card card${i}"></canvas>
             `;
             this.wrapper.insertAdjacentHTML('beforeend', player)
         }
@@ -40,14 +42,24 @@ class Poker {
         this.mySecondCard = this.wrapper.querySelector('.card10');
         this.tableCards = this.wrapper.querySelectorAll('.card19, .card20, .card21, .card22, .card23');
         this.lastTableCard = this.wrapper.querySelector('.card23');
+
+        for (let c of this.cards) {
+            c.ctx2d = c.getContext('2d');
+        }
     }
 
     bindEvents() {
         [ this.myFirstCard, this.mySecondCard ].forEach(c => {
             c.on('animationend', function (e) {
                 let card = e.target;
+
                 let style = card.style;
-                style.backgroundImage = `url(img/Asset.svg)`;
+                if (use_canvas_check.checked) {
+                    style.backgroundImage = 'url(img/px.png)'
+                } else {
+                    style.backgroundImage = `url(img/Asset.svg)`;
+                }
+
                 card._cardIndexX = Poker.getRandomCardIndex();
                 card._cardIndexY = Poker.getRandomCardIndex();
                 Poker.setBG(card);
@@ -80,8 +92,14 @@ class Poker {
                 }
             } else if (e.animationName === 'card23') {
                 for (let card of this.tableCards) {
+
                     let style = card.style;
-                    style.backgroundImage = `url(img/Asset.svg)`;
+                    if (use_canvas_check.checked) {
+                        style.backgroundImage = 'url(img/px.png)'
+                    } else {
+                        style.backgroundImage = `url(img/Asset.svg)`;
+                    }
+
                     card._cardIndexX = Poker.getRandomCardIndex();
                     card._cardIndexY = Poker.getRandomCardIndex();
                     Poker.setBG(card);
@@ -113,6 +131,9 @@ class Poker {
             card.removeClass('open');
 
             propsToReset.forEach(p => card.style[p] = null);
+
+            let ctx = card.ctx2d;
+            ctx.clearRect(0, 0, ctx.width, ctx.height);
         }
 
         clearTimeout(this._restartHandler);
@@ -147,17 +168,31 @@ class Poker {
     }
 
     static setBG(card) {
-        let style = card.style;
+        let ctx = card.ctx2d;
+
         if (!card._boundingRectHeight) {
             let rect = card.getBoundingClientRect();
-            card._boundingRectHeight = rect.height;
-            card._boundingRectWidth = rect.width;
+            let width = card._boundingRectWidth = rect.width;
+            let height = card._boundingRectHeight = rect.height;
+
+            card.width = ctx.width = width * devicePixelRatio;
+            card.height = ctx.height = height * devicePixelRatio;
         }
-        let height = card._boundingRectHeight;
-        let width = card._boundingRectWidth;
-        style.backgroundSize = `${5 * width}px ${4 * height}px`;
-        style.backgroundPositionX = `${width * card._cardIndexX}px`;
-        style.backgroundPositionY = `${height * card._cardIndexY}px`;
+
+        if (use_canvas_check.checked) {
+            let image = window.cardSVG;
+            let widthImg = image.naturalWidth;
+            let heightImg = image.naturalHeight / 52;
+            ctx.drawImage(image, 0, heightImg * card._cardIndexY, widthImg, heightImg, 0, 0, ctx.width, ctx.height);
+        } else {
+            let style = card.style;
+            let width = card._boundingRectWidth;
+            let height = card._boundingRectHeight;
+            style.backgroundSize = `${5 * width}px ${4 * height}px`;
+            style.backgroundPositionX = `${width * card._cardIndexX}px`;
+            style.backgroundPositionY = `${height * card._cardIndexY}px`;
+        }
+
     }
 
     static randomInRange(min, max) {
@@ -165,6 +200,7 @@ class Poker {
     }
 
     static getRandomCardIndex() {
-        return parseInt(Poker.randomInRange(0, 4 * 5 - 1));
+        let upperBound = use_canvas_check.checked ? 52 - 1 : 4 * 5 - 1;
+        return parseInt(Poker.randomInRange(0, upperBound));
     }
 }

@@ -27,7 +27,13 @@ let games_wrapper = document.querySelector('.games_wrapper');
 let currentGameIndex = 0;
 let currentGame = games[currentGameIndex];
 
-setTimeout(() => currentGame.play(), 500);
+let svg = window.cardSVG = new Image();
+
+svg.onload = function () {
+    setTimeout(() => currentGame.play(), 500);
+};
+svg.src = 'img/cards.png';
+let use_canvas_check = document.getElementById('use_canvas');
 
 let previousTimeoutId = null;
 Array.from(tables).forEach((t, i) => {

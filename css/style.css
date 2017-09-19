@@ -3,8 +3,18 @@ body {
   height: 2000vh;
   background-color: ivory;
 }
-div {
+div,
+canvas {
   position: absolute;
+}
+#check_wrapper {
+  z-index: 10;
+  color: white;
+  right: 30px;
+  top: 10px;
+}
+#check_wrapper label {
+  margin-right: 20px;
 }
 .center {
   top: 50%;
