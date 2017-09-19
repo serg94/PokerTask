@@ -14,7 +14,7 @@ class Poker {
             let player = `
                 <div class="player player${i}">
                     <div class="playerImage"></div>
-                    <div class="playerName">player${1}</div>
+                    <div class="playerName">player${i}</div>
                     <div class="playerMoney">${Poker.randomInRange(1e3, 1e5).toFixed(2)}</div>
                 </div>
             `;
@@ -47,8 +47,9 @@ class Poker {
             c.on('animationend', function (e) {
                 let card = e.target;
                 let style = card.style;
-                style.backgroundImage = `url(img/cards.svg)`;
-                card._cardIndex = Poker.getRandomCardIndex();
+                style.backgroundImage = `url(img/Asset.svg)`;
+                card._cardIndexX = Poker.getRandomCardIndex();
+                card._cardIndexY = Poker.getRandomCardIndex();
                 Poker.setBG(card);
             });
         });
@@ -80,8 +81,9 @@ class Poker {
             } else if (e.animationName === 'card23') {
                 for (let card of this.tableCards) {
                     let style = card.style;
-                    style.backgroundImage = `url(img/cards.svg)`;
-                    card._cardIndex = Poker.getRandomCardIndex();
+                    style.backgroundImage = `url(img/Asset.svg)`;
+                    card._cardIndexX = Poker.getRandomCardIndex();
+                    card._cardIndexY = Poker.getRandomCardIndex();
                     Poker.setBG(card);
                     card.addClass('open');
                 }
@@ -98,12 +100,14 @@ class Poker {
     }
 
     reset() {
-        let propsToReset = [ 'zIndex', 'backgroundSize', 'backgroundPositionY', 'backgroundImage' ];
+        let propsToReset = [ 'zIndex', 'backgroundSize',
+            'backgroundPositionX', 'backgroundPositionY', 'backgroundImage' ];
 
         this.wrapper.removeClass('game_in_progress');
 
         for (let card of this.cards) {
-            card._cardIndex = null;
+            card._cardIndexX = null;
+            card._cardIndexY = null;
             card._animationComplete = null;
             card._animationInProgress = null;
             card.removeClass('open');
@@ -124,6 +128,7 @@ class Poker {
 
     pause() {
         this._paused = true;
+        clearTimeout(this.restartTimeout);
     }
 
     play() {
@@ -138,17 +143,21 @@ class Poker {
     restart() {
         if (this._paused) return;
         this.reset();
-        requestAnimationFrame(() => this._start());
+        this.restartTimeout = setTimeout(() => this._start(), 50); // leave time for re-render reset changes
     }
 
     static setBG(card) {
         let style = card.style;
         if (!card._boundingRectHeight) {
-            card._boundingRectHeight = card.getBoundingClientRect().height;
+            let rect = card.getBoundingClientRect();
+            card._boundingRectHeight = rect.height;
+            card._boundingRectWidth = rect.width;
         }
         let height = card._boundingRectHeight;
-        style.backgroundSize = `${height}px ${52 * height}px`;
-        style.backgroundPositionY = `${height * card._cardIndex}px`;
+        let width = card._boundingRectWidth;
+        style.backgroundSize = `${5 * width}px ${4 * height}px`;
+        style.backgroundPositionX = `${width * card._cardIndexX}px`;
+        style.backgroundPositionY = `${height * card._cardIndexY}px`;
     }
 
     static randomInRange(min, max) {
@@ -156,6 +165,6 @@ class Poker {
     }
 
     static getRandomCardIndex() {
-        return parseInt(Poker.randomInRange(0, 51));
+        return parseInt(Poker.randomInRange(0, 4 * 5 - 1));
     }
 }
